@@ -20,23 +20,23 @@ public class HomeController {
          * @return Sring url
      */
     @RequestMapping("/home/bigBackPic")
-    public String getBigBackPic() {
+    public Home getBigBackPic() {
         Home home = new Home();
         home.setUrl(bigBackPicUrl);
-        return home.getUrl();
+        return home;
     }
 
     @RequestMapping("/home/smallBackPic")
-    public String getSmallBackPic() {
+    public Home getSmallBackPic() {
         Home home = new Home();
         home.setUrl(smallBackPicUrl);
-        return home.getUrl();
+        return home;
     }
 
     @RequestMapping("/home/slogan")
-    public String getSlogan() {
+    public Home getSlogan() {
         Home home = new Home();
         home.setSlogan(slogan);
-        return home.getSlogan();
+        return home;
     }
 }
