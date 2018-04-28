@@ -13,11 +13,9 @@ public class HomeController {
     private String slogan = "李为的个人网站";
 
     /**
-     * 请求：/home/bigBackPic
-     * 请求方式：get
+     * 请求：GET /home/bigBackPic
      * 返回contentType: application/json
      * responseBody: { "url": "http://123.123.123.123/big.png" }
-         * @return Sring url
      */
     @RequestMapping("/home/bigBackPic")
     public Home getBigBackPic() {
@@ -26,6 +24,11 @@ public class HomeController {
         return home;
     }
 
+    /**
+     * 请求：GET /home/smallBackPic
+     * 返回contentType: application/json
+     * responseBody: { "url": "http://123.123.123.123/small.png" }
+     */
     @RequestMapping("/home/smallBackPic")
     public Home getSmallBackPic() {
         Home home = new Home();
@@ -33,6 +36,11 @@ public class HomeController {
         return home;
     }
 
+    /**
+     * 请求：GET /home/slogan
+     * 返回contentType: application/json
+     * responseBody: { "slogan": "李为的个人网站" }
+     */
     @RequestMapping("/home/slogan")
     public Home getSlogan() {
         Home home = new Home();

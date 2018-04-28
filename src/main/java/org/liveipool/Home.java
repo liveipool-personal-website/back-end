@@ -11,16 +11,16 @@ public class Home {
     private String url;
     private String slogan;
 
-    public String setUrl(String url) {
-        return this.url = url;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public String getUrl() {
         return url;
     }
 
-    public String setSlogan(String slogan) {
-        return this.slogan = slogan;
+    public void setSlogan(String slogan) {
+        this.slogan = slogan;
     }
 
     public String getSlogan() {
