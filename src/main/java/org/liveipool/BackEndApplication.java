@@ -9,6 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @SpringBootApplication
+//@EnableAutoConfiguration
+//@EnableTransactionManagement
+//@ServletComponentScan
+//@ComponentScan
+//@EnableScheduling
 public class BackEndApplication {
 
 	public static void main(String[] args) {

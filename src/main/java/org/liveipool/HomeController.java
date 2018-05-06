@@ -1,26 +1,35 @@
 package org.liveipool;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by liveipool on 2018/4/28.
  */
 @RestController
+@RequestMapping("/home")
 public class HomeController {
-    private String bigBackPicUrl = "big hahahah";
-    private String smallBackPicUrl = "small hhhhh";
-    private String slogan = "李为的个人网站";
+    @Autowired
+    private HomeRepository homeRepository;
+
+    private List<Home> list = new ArrayList<Home>();
 
     /**
      * 请求：GET /home/bigBackPic
      * 返回contentType: application/json
      * responseBody: { "url": "http://123.123.123.123/big.png" }
      */
-    @RequestMapping("/home/bigBackPic")
+    @RequestMapping("bigBackPic")
+    @ResponseBody
     public Home getBigBackPic() {
+        list = homeRepository.findAll();
         Home home = new Home();
-        home.setUrl(bigBackPicUrl);
+        home.setBigBackPicUrl(list.get(0).getBigBackPicUrl());
         return home;
     }
 
@@ -29,10 +38,12 @@ public class HomeController {
      * 返回contentType: application/json
      * responseBody: { "url": "http://123.123.123.123/small.png" }
      */
-    @RequestMapping("/home/smallBackPic")
+    @RequestMapping("smallBackPic")
+    @ResponseBody
     public Home getSmallBackPic() {
+        list = homeRepository.findAll();
         Home home = new Home();
-        home.setUrl(smallBackPicUrl);
+        home.setSmallBackPicUrl(list.get(0).getSmallBackPicUrl());
         return home;
     }
 
@@ -41,10 +52,12 @@ public class HomeController {
      * 返回contentType: application/json
      * responseBody: { "slogan": "李为的个人网站" }
      */
-    @RequestMapping("/home/slogan")
+    @RequestMapping("slogan")
+    @ResponseBody
     public Home getSlogan() {
+        list = homeRepository.findAll();
         Home home = new Home();
-        home.setSlogan(slogan);
+        home.setSlogan(list.get(0).getSlogan());
         return home;
     }
 }
