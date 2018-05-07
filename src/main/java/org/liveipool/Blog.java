@@ -1,7 +1,6 @@
 package org.liveipool;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.sun.xml.internal.fastinfoset.util.StringArray;
 
 /**
  * Created by liveipool on 2018/4/28.
